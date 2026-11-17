@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juicebox Dismantling Service - Rust Belt Auto Repair</title>
+<meta name="description" content="Juicebox Dismantling Service - rust belt auto repair for Nissan Altimas, GMC square body trucks and clapped-out Volkswagens. Fictional demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=202611162232">
+<link rel="icon" type="image/jpeg" href="photos/mascot.jpg?v=202611162232">
+<link rel="stylesheet" href="password-gate.css?v=202611162232">
+<script>
+(function () {
+  var siteVersion = '202611162232';
+  window.SS_SITE_VERSION = siteVersion;
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js?v=' + siteVersion, { updateViaCache: 'none' })
+      .then(function (registration) { registration.update(); })
+      .catch(function () {});
+  }
+  window.addEventListener('pageshow', function () {
+    if (!window.fetch) return;
+    fetch('version.json?check=' + Date.now(), { cache: 'no-store' })
+      .then(function (response) { return response.ok ? response.json() : null; })
+      .then(function (manifest) {
+        if (!manifest || !manifest.version || manifest.version === siteVersion) return;
+        var key = 'jb-version-reload';
+        if (sessionStorage.getItem(key) === manifest.version) return;
+        sessionStorage.setItem(key, manifest.version);
+        window.location.reload();
+      })
+      .catch(function () {});
+  });
+})();
+</script>
+</head>
+<body class="ss-pw-locked">
+<div id="ss-password-gate" role="dialog" aria-modal="true" aria-labelledby="ss-pw-title">
+<form id="ss-pw-form">
+<p class="ss-pw-kicker">Private concept preview</p>
+<h2 id="ss-pw-title">Juicebox Dismantling Service</h2>
+<p>Enter the preview password.</p>
+<label for="ss-pw-input">Password</label>
+<input id="ss-pw-input" type="password" autocomplete="current-password" required>
+<button type="submit">Enter</button>
+<p id="ss-pw-message" class="ss-pw-error" aria-live="polite"></p>
+<p class="ss-pw-note">Concept preview only. Fictional business, placeholder content.</p>
+</form>
+</div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker-track">
+<span>ALTIMA ER</span><span>&#9670;</span><span>SQUARE BODY SQUAD</span><span>&#9670;</span><span>CLAPPED VW RESCUE</span><span>&#9670;</span><span>STRETCHED. SLAMMED. CAMBERED.</span><span>&#9670;</span><span>MUCH TORQUE. VERY SECURE.</span><span>&#9670;</span>
+</div></div>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="photos/mascot.jpg?v=202611162232" alt="Juice, the Juicebox mascot" class="brand-mark">
+    <span class="brand-type">JUICEBOX<em>DISMANTLING SERVICE</em></span>
+  </a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">MENU</button>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="active">Home</a>
+    <a href="gallery.html" class="">Dismantles</a>
+    <a href="reviews.html" class="">Reviews</a>
+    <a href="membership.html" class="">Juice Crew</a>
+    <a href="storage.html" class="">Storage</a>
+  </nav>
+</header>
+<p class="demo-bar">CONCEPT PREVIEW - Juicebox Dismantling Service is a fictional demo shop. All content, prices and reviews are placeholders.</p>
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="kicker">EST. 2019 - SOMEWHERE IN THE RUST BELT</p>
+    <h1>WE TAKE 'EM APART.<span class="hl">SOMETIMES WE PUT 'EM BACK.</span></h1>
+    <p class="lede">Auto repair for Nissan Altimas, GMC square bodies, and Volkswagens that gave up years ago. Stretched wheels, slammed ride heights and camber you can see from space - on purpose, for once.</p>
+    <div class="cta-row">
+      <a class="btn" href="gallery.html">SEE PAST DISMANTLES</a>
+      <a class="btn ghost" href="membership.html">JOIN THE JUICE CREW</a>
+    </div>
+  </div>
+  <figure class="hero-mascot">
+    <img src="photos/mascot.jpg?v=202611162232" alt="Juice, the shop foreman mascot, holding a wrench">
+    <figcaption>JUICE - SHOP FOREMAN,<br>CHIEF VIBES OFFICER</figcaption>
+  </figure>
+</section>
+
+<section class="section">
+  <h2 class="sec-title">THE BIG THREE</h2>
+  <p class="sec-sub">Three food groups. All carbureted (emotionally).</p>
+  <div class="cards3">
+    <article class="card">
+      <img src="photos/hero-altima.jpg?v=202611162232" alt="Slammed Nissan Altima with extreme negative camber and stretched tires">
+      <div class="card-body">
+        <h3>ALTIMA ER</h3>
+        <p>America's most committed commuters. We resuscitate CVTs, re-attach bumpers currently held on by zip ties, and yes - we do stance builds. Slammed, cambered, stretched. Bring us your Juicebox.</p>
+        <p class="tagline">Slammed daily. On purpose.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="photos/squarebody.jpg?v=202611162232" alt="GMC square body pickup with patina, lowered on wide wheels">
+      <div class="card-body">
+        <h3>SQUARE BODY SQUAD</h3>
+        <p>1973-1987 GM trucks with more character than a bar fight. Patina preservation, LS swaps, frame-off daydreams. We keep the rust you love and evict the rust you don't.</p>
+        <p class="tagline">Patina is a finish.</p>
+      </div>
+    </article>
+    <article class="card">
+      <img src="photos/vw-clapped.jpg?v=202611162232" alt="Clapped out VW Jetta with mismatched panels, slammed on gold wheels">
+      <div class="card-body">
+        <h3>CLAPPED VW RESCUE</h3>
+        <p>Volkswagens running on fumes and vibes. Mismatched panels welcome - rust bubbles are just texture. We stance the unstanceable and vacuum out the last owner's french fries.</p>
+        <p class="tagline">Clapped is a starting point.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="doge-band">
+  <img src="photos/doge-ram.jpg?v=202611162232" alt="Ramón the Shiba Inu behind the wheel of the shop's orange Dodge Ram">
+  <div class="doge-copy">
+    <p class="kicker light">SHOP SECURITY - DOGE RAM UNIT</p>
+    <h2>MEET RAM&Oacute;N</h2>
+    <p>Head of security and driver of the shop Ram 1500. Ramón has personally supervised zero thefts and approximately nine thousand sandwich breaks. Much torque. Very patrol. Wow.</p>
+    <p class="tagline light">Security provided by a dog in a truck. It works.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="sec-title">FIVE STARS, ALLEGEDLY</h2>
+  <p class="sec-sub"><span class="ph-badge">PLACEHOLDER REVIEWS - FICTIONAL</span></p>
+  <div class="cards3">
+    <blockquote class="review-card">
+      <p class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <p>"My Altima's wheels pointed four different directions. Juicebox made them point the SAME four directions, but with crazy camber. On purpose. I cried."</p>
+      <footer>Big Mike R. - 2013 Altima <span class="ph">(fictional)</span></footer>
+    </blockquote>
+    <blockquote class="review-card">
+      <p class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <p>"They got my square body running, then talked me out of selling it. Twice. Five stars for the emotional damage alone."</p>
+      <footer>Dale G. - '85 GMC Sierra <span class="ph">(fictional)</span></footer>
+    </blockquote>
+    <blockquote class="review-card">
+      <p class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+      <p>"My Jetta was technically scrap. Now it's scrap with stretched tires and a subwoofer. Unbelievable work."</p>
+      <footer>Kyle D. - MK4 Jetta <span class="ph">(fictional)</span></footer>
+    </blockquote>
+  </div>
+  <p class="more-link"><a class="btn ghost" href="reviews.html">READ MORE FIVE-STAR FICTION</a></p>
+</section>
+
+<section class="split-band">
+  <div class="split">
+    <h2>JUICE CREW<br>GARAGE MEMBERSHIP</h2>
+    <p>Lift time, real tools, compressed air, and advice you didn't ask for. Work on your own heap in a heated bay instead of a frozen driveway.</p>
+    <a class="btn" href="membership.html">SEE MEMBERSHIP</a>
+  </div>
+  <div class="split alt">
+    <h2>CAR STORAGE</h2>
+    <p>Your project car has been outside for three winters. It deserves a bed. Indoor, covered, and checked on monthly.</p>
+    <a class="btn" href="storage.html">SEE STORAGE</a>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="foot-grid">
+    <div>
+      <p class="foot-brand">JUICEBOX<br>DISMANTLING SERVICE</p>
+      <p class="foot-note">Rust belt auto repair for the cars other shops hang up on.</p>
+    </div>
+    <div>
+      <p class="foot-head">SHOP</p>
+      <p>123 Rustbucket Lane<br>Cleveland, OH 44113 <span class="ph">(placeholder)</span></p>
+      <p>(216) 555-0134 <span class="ph">(placeholder)</span></p>
+      <p>Mon-Sat, 9ish to 6ish</p>
+    </div>
+    <div>
+      <p class="foot-head">PAGES</p>
+      <p><a href="gallery.html">Past dismantles</a><br><a href="reviews.html">Reviews</a><br><a href="membership.html">Juice Crew membership</a><br><a href="storage.html">Car storage</a></p>
+    </div>
+  </div>
+  <p class="foot-legal">&copy; 2026 Juicebox Dismantling Service - a fictional business built as a design concept. No real services, prices or customers. Ramón is real in our hearts.</p>
+</footer>
+<script src="password-config.js?v=202611162232"></script>
+<script src="password-gate.js?v=202611162232"></script>
+<script src="script.js?v=202611162232"></script>
+</body>
+</html>

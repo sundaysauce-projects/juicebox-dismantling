@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juice Crew Garage Membership - Juicebox Dismantling Service</title>
+<meta name="description" content="Juicebox Dismantling Service - rust belt auto repair for Nissan Altimas, GMC square body trucks and clapped-out Volkswagens. Fictional demo site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=202611162232">
+<link rel="icon" type="image/jpeg" href="photos/mascot.jpg?v=202611162232">
+<link rel="stylesheet" href="password-gate.css?v=202611162232">
+<script>
+(function () {
+  var siteVersion = '202611162232';
+  window.SS_SITE_VERSION = siteVersion;
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js?v=' + siteVersion, { updateViaCache: 'none' })
+      .then(function (registration) { registration.update(); })
+      .catch(function () {});
+  }
+  window.addEventListener('pageshow', function () {
+    if (!window.fetch) return;
+    fetch('version.json?check=' + Date.now(), { cache: 'no-store' })
+      .then(function (response) { return response.ok ? response.json() : null; })
+      .then(function (manifest) {
+        if (!manifest || !manifest.version || manifest.version === siteVersion) return;
+        var key = 'jb-version-reload';
+        if (sessionStorage.getItem(key) === manifest.version) return;
+        sessionStorage.setItem(key, manifest.version);
+        window.location.reload();
+      })
+      .catch(function () {});
+  });
+})();
+</script>
+</head>
+<body class="ss-pw-locked">
+<div id="ss-password-gate" role="dialog" aria-modal="true" aria-labelledby="ss-pw-title">
+<form id="ss-pw-form">
+<p class="ss-pw-kicker">Private concept preview</p>
+<h2 id="ss-pw-title">Juicebox Dismantling Service</h2>
+<p>Enter the preview password.</p>
+<label for="ss-pw-input">Password</label>
+<input id="ss-pw-input" type="password" autocomplete="current-password" required>
+<button type="submit">Enter</button>
+<p id="ss-pw-message" class="ss-pw-error" aria-live="polite"></p>
+<p class="ss-pw-note">Concept preview only. Fictional business, placeholder content.</p>
+</form>
+</div>
+<div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker-track">
+<span>ALTIMA ER</span><span>&#9670;</span><span>SQUARE BODY SQUAD</span><span>&#9670;</span><span>CLAPPED VW RESCUE</span><span>&#9670;</span><span>STRETCHED. SLAMMED. CAMBERED.</span><span>&#9670;</span><span>MUCH TORQUE. VERY SECURE.</span><span>&#9670;</span>
+</div></div>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="photos/mascot.jpg?v=202611162232" alt="Juice, the Juicebox mascot" class="brand-mark">
+    <span class="brand-type">JUICEBOX<em>DISMANTLING SERVICE</em></span>
+  </a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">MENU</button>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="">Home</a>
+    <a href="gallery.html" class="">Dismantles</a>
+    <a href="reviews.html" class="">Reviews</a>
+    <a href="membership.html" class="active">Juice Crew</a>
+    <a href="storage.html" class="">Storage</a>
+  </nav>
+</header>
+<p class="demo-bar">CONCEPT PREVIEW - Juicebox Dismantling Service is a fictional demo shop. All content, prices and reviews are placeholders.</p>
+
+<section class="page-hero">
+  <img src="photos/garage.jpg?v=202611162232" alt="Inside the Juicebox garage: lifts, tool chests and project cars">
+  <div class="page-hero-copy">
+    <p class="kicker light">JUICE CREW GARAGE MEMBERSHIP</p>
+    <h1>YOUR DRIVEWAY IS COLD.<span class="hl">OUR LIFTS ARE WARM.</span></h1>
+    <p>Monthly access to bays, lifts, tools and collective bad decisions. Work on your own car like a professional amateur.</p>
+    <p class="ph-badge">PLACEHOLDER TIERS AND PRICES - MEMBERSHIP NOT ACTUALLY FOR SALE (YET)</p>
+  </div>
+</section>
+<section class="section">
+  <div class="cards3">
+    <article class="tier">
+      <h3>SCREWDRIVER</h3>
+      <p class="price">$49<span>/mo</span></p>
+      <ul>
+        <li>Open-shop Saturdays, 9-6</li>
+        <li>Hand tool library access</li>
+        <li>Air compressor &amp; jacks</li>
+        <li>Free coffee (motor oil adjacent)</li>
+        <li>One (1) Ramón greeting per visit</li>
+      </ul>
+      <button class="btn disabled" disabled>COMING SOON (DEMO)</button>
+    </article>
+    <article class="tier featured">
+      <p class="tier-flag">MOST JUICE</p>
+      <h3>WRENCH</h3>
+      <p class="price">$99<span>/mo</span></p>
+      <ul>
+        <li>Everything in Screwdriver</li>
+        <li>Two-post lift, 4 hrs/mo included</li>
+        <li>Power tools &amp; welder time</li>
+        <li>Parts storage shelf</li>
+        <li>One free camber opinion per month</li>
+      </ul>
+      <button class="btn disabled" disabled>COMING SOON (DEMO)</button>
+    </article>
+    <article class="tier">
+      <h3>IMPACT GUN</h3>
+      <p class="price">$179<span>/mo</span></p>
+      <ul>
+        <li>Everything in Wrench</li>
+        <li>Lift priority, 10 hrs/mo</li>
+        <li>Overnight project parking</li>
+        <li>Alignment rack access</li>
+        <li>Juicebox sticker pack, quarterly</li>
+      </ul>
+      <button class="btn disabled" disabled>COMING SOON (DEMO)</button>
+    </article>
+  </div>
+  <p class="fineprint">All tiers, prices and perks are placeholders for layout preview. No membership exists to sell. Yet.</p>
+</section>
+<footer class="site-footer">
+  <div class="foot-grid">
+    <div>
+      <p class="foot-brand">JUICEBOX<br>DISMANTLING SERVICE</p>
+      <p class="foot-note">Rust belt auto repair for the cars other shops hang up on.</p>
+    </div>
+    <div>
+      <p class="foot-head">SHOP</p>
+      <p>123 Rustbucket Lane<br>Cleveland, OH 44113 <span class="ph">(placeholder)</span></p>
+      <p>(216) 555-0134 <span class="ph">(placeholder)</span></p>
+      <p>Mon-Sat, 9ish to 6ish</p>
+    </div>
+    <div>
+      <p class="foot-head">PAGES</p>
+      <p><a href="gallery.html">Past dismantles</a><br><a href="reviews.html">Reviews</a><br><a href="membership.html">Juice Crew membership</a><br><a href="storage.html">Car storage</a></p>
+    </div>
+  </div>
+  <p class="foot-legal">&copy; 2026 Juicebox Dismantling Service - a fictional business built as a design concept. No real services, prices or customers. Ramón is real in our hearts.</p>
+</footer>
+<script src="password-config.js?v=202611162232"></script>
+<script src="password-gate.js?v=202611162232"></script>
+<script src="script.js?v=202611162232"></script>
+</body>
+</html>
