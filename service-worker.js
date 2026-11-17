@@ -1,4 +1,4 @@
-const SW_VERSION = '202611171715';
+const SW_VERSION = '202611171730';
 const CACHE_NAME = 'juicebox-' + SW_VERSION;
 
 self.addEventListener('install', event => {

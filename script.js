@@ -27,3 +27,25 @@
     });
   });
 })();
+
+// Video testimonials: some browsers skip autoplay on load. Start muted clips explicitly
+// when visible, and retry on the first tap or scroll.
+(function () {
+  var vids = [].slice.call(document.querySelectorAll('video[autoplay]'));
+  if (!vids.length) return;
+  function tryPlay(v) {
+    v.muted = true;
+    var p = v.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+  vids.forEach(tryPlay);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting && e.target.paused) tryPlay(e.target); });
+    }, { threshold: 0.3 });
+    vids.forEach(function (v) { io.observe(v); });
+  }
+  ['pointerdown', 'scroll', 'keydown'].forEach(function (ev) {
+    window.addEventListener(ev, function () { vids.forEach(function (v) { if (v.paused && !v.ended) tryPlay(v); }); }, { once: true, passive: true });
+  });
+})();
