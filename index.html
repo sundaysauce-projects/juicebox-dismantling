@@ -8,11 +8,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=202611170403">
-<link rel="icon" type="image/jpeg" href="photos/mascot.jpg?v=202611170403">
+<link rel="stylesheet" href="styles.css?v=202611170414">
+<link rel="icon" type="image/jpeg" href="photos/mascot.jpg?v=202611170414">
 <script>
 (function () {
-  var siteVersion = '202611170403';
+  var siteVersion = '202611170414';
   window.SS_SITE_VERSION = siteVersion;
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js?v=' + siteVersion, { updateViaCache: 'none' })
@@ -25,10 +25,12 @@
       .then(function (response) { return response.ok ? response.json() : null; })
       .then(function (manifest) {
         if (!manifest || !manifest.version || manifest.version === siteVersion) return;
-        var key = 'jb-version-reload';
-        if (sessionStorage.getItem(key) === manifest.version) return;
-        sessionStorage.setItem(key, manifest.version);
-        window.location.reload();
+        var key = 'jb-version-reload:' + window.location.pathname + ':' + manifest.version;
+        if (sessionStorage.getItem(key)) return;
+        sessionStorage.setItem(key, '1');
+        var refreshUrl = new URL(window.location.href);
+        refreshUrl.searchParams.set('v', manifest.version);
+        window.location.replace(refreshUrl.toString());
       })
       .catch(function () {});
   });
@@ -41,7 +43,7 @@
 </div></div>
 <header class="site-header">
   <a class="brand" href="index.html">
-    <img src="photos/mascot.jpg?v=202611170403" alt="Juice, the Juicebox mascot" class="brand-mark">
+    <img src="photos/mascot.jpg?v=202611170414" alt="Juice, the Juicebox mascot" class="brand-mark">
     <span class="brand-type">JUICEBOX<em>DISMANTLING SERVICE</em></span>
   </a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">MENU</button>
@@ -66,7 +68,7 @@
     </div>
   </div>
   <figure class="hero-mascot">
-    <img src="photos/mascot.jpg?v=202611170403" alt="Juice, the shop foreman mascot, holding a wrench">
+    <img src="photos/mascot.jpg?v=202611170414" alt="Juice, the shop foreman mascot, holding a wrench">
     <figcaption>JUICE - SHOP FOREMAN,<br>CHIEF VIBES OFFICER</figcaption>
   </figure>
 </section>
@@ -76,7 +78,7 @@
   <p class="sec-sub">Three food groups. All carbureted (emotionally).</p>
   <div class="cards3">
     <article class="card">
-      <img src="photos/hero-altima.jpg?v=202611170403" alt="Slammed Nissan Altima with extreme negative camber and stretched tires">
+      <img src="photos/hero-altima.jpg?v=202611170414" alt="Slammed Nissan Altima with extreme negative camber and stretched tires">
       <div class="card-body">
         <h3>ALTIMA ER</h3>
         <p>America's most committed commuters. We resuscitate CVTs, re-attach bumpers currently held on by zip ties, and yes - we do stance builds. Slammed, cambered, stretched. Bring us your Juicebox.</p>
@@ -84,7 +86,7 @@
       </div>
     </article>
     <article class="card">
-      <img src="photos/squarebody.jpg?v=202611170403" alt="GMC square body pickup with patina, lowered on wide wheels">
+      <img src="photos/squarebody.jpg?v=202611170414" alt="GMC square body pickup with patina, lowered on wide wheels">
       <div class="card-body">
         <h3>SQUARE BODY SQUAD</h3>
         <p>1973-1987 GM trucks with more character than a bar fight. Patina preservation, LS swaps, frame-off daydreams. We keep the rust you love and evict the rust you don't.</p>
@@ -92,7 +94,7 @@
       </div>
     </article>
     <article class="card">
-      <img src="photos/vw-clapped.jpg?v=202611170403" alt="Clapped out VW Jetta with mismatched panels, slammed on gold wheels">
+      <img src="photos/vw-clapped.jpg?v=202611170414" alt="Clapped out VW Jetta with mismatched panels, slammed on gold wheels">
       <div class="card-body">
         <h3>CLAPPED VW RESCUE</h3>
         <p>Volkswagens running on fumes and vibes. Mismatched panels welcome - rust bubbles are just texture. We stance the unstanceable and vacuum out the last owner's french fries.</p>
@@ -103,7 +105,7 @@
 </section>
 
 <section class="doge-band">
-  <img src="photos/doge-ram.jpg?v=202611170403" alt="Ramón the Shiba Inu behind the wheel of the shop's orange Dodge Ram">
+  <img src="photos/doge-ram.jpg?v=202611170414" alt="Ramón the Shiba Inu behind the wheel of the shop's orange Dodge Ram">
   <div class="doge-copy">
     <p class="kicker light">SHOP SECURITY - DOGE RAM UNIT</p>
     <h2>MEET RAM&Oacute;N</h2>
@@ -166,6 +168,6 @@
   </div>
   <p class="foot-legal">&copy; 2026 Juicebox Dismantling Service - a fictional business built as a design concept. No real services, prices or customers. Ramón is real in our hearts.</p>
 </footer>
-<script src="script.js?v=202611170403"></script>
+<script src="script.js?v=202611170414"></script>
 </body>
 </html>
