@@ -1,4 +1,4 @@
-const SW_VERSION = '202611171600';
+const SW_VERSION = '202611171715';
 const CACHE_NAME = 'juicebox-' + SW_VERSION;
 
 self.addEventListener('install', event => {
@@ -23,6 +23,8 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+  // Never touch media or Range requests: partial (206) responses must come straight from the network.
+  if (request.headers.has('range') || request.destination === 'video' || request.destination === 'audio' || /\.(mp4|webm|mov|m4v)$/i.test(url.pathname)) return;
 
   if (request.mode === 'navigate') {
     event.respondWith(
