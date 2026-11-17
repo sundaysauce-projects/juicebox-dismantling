@@ -222,6 +222,14 @@ h1, h2, h3 { font-family: var(--disp); font-weight: 400; margin: 0; letter-spaci
 .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .fineprint { text-align: center; color: var(--cream-dim); font-size: 14px; margin-top: 30px; }
 
+/* video testimonials + certifications */
+.video-card { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+.video-card video { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border-bottom: 3px solid var(--cream); background: #000; }
+.video-card p, .video-card footer { padding-left: 20px; padding-right: 20px; }
+.video-card .stars { padding-top: 16px; }
+.video-card footer { padding-bottom: 20px; }
+.cert-card h3 { color: var(--orange); }
+
 /* split band */
 .split-band { display: grid; grid-template-columns: 1fr 1fr; }
 .split { padding: clamp(36px, 5vw, 72px) clamp(16px, 4vw, 48px); background: var(--panel); }
