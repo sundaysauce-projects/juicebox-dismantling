@@ -8,11 +8,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=202611170403">
-<link rel="icon" type="image/jpeg" href="photos/mascot.jpg?v=202611170403">
+<link rel="stylesheet" href="styles.css?v=202611170414">
+<link rel="icon" type="image/jpeg" href="photos/mascot.jpg?v=202611170414">
 <script>
 (function () {
-  var siteVersion = '202611170403';
+  var siteVersion = '202611170414';
   window.SS_SITE_VERSION = siteVersion;
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js?v=' + siteVersion, { updateViaCache: 'none' })
@@ -25,10 +25,12 @@
       .then(function (response) { return response.ok ? response.json() : null; })
       .then(function (manifest) {
         if (!manifest || !manifest.version || manifest.version === siteVersion) return;
-        var key = 'jb-version-reload';
-        if (sessionStorage.getItem(key) === manifest.version) return;
-        sessionStorage.setItem(key, manifest.version);
-        window.location.reload();
+        var key = 'jb-version-reload:' + window.location.pathname + ':' + manifest.version;
+        if (sessionStorage.getItem(key)) return;
+        sessionStorage.setItem(key, '1');
+        var refreshUrl = new URL(window.location.href);
+        refreshUrl.searchParams.set('v', manifest.version);
+        window.location.replace(refreshUrl.toString());
       })
       .catch(function () {});
   });
@@ -41,7 +43,7 @@
 </div></div>
 <header class="site-header">
   <a class="brand" href="index.html">
-    <img src="photos/mascot.jpg?v=202611170403" alt="Juice, the Juicebox mascot" class="brand-mark">
+    <img src="photos/mascot.jpg?v=202611170414" alt="Juice, the Juicebox mascot" class="brand-mark">
     <span class="brand-type">JUICEBOX<em>DISMANTLING SERVICE</em></span>
   </a>
   <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">MENU</button>
@@ -62,39 +64,39 @@
 
   <div class="gallery-grid">
     <figure class="g-item tall">
-      <img src="photos/hero-altima.jpg?v=202611170403" alt="Project Low Profile: slammed Nissan Altima with crazy camber">
+      <img src="photos/hero-altima.jpg?v=202611170414" alt="Project Low Profile: slammed Nissan Altima with crazy camber">
       <figcaption><strong>PROJECT: LOW PROFILE</strong>2014 Nissan Altima. Customer asked for "a little camber." We heard "camber." Static drop, stretched 215s, plates maxed.</figcaption>
     </figure>
     <figure class="g-item">
-      <img src="photos/gallery-swap.jpg?v=202611170403" alt="The Heart Transplant: Altima engine being hoisted out">
+      <img src="photos/gallery-swap.jpg?v=202611170414" alt="The Heart Transplant: Altima engine being hoisted out">
       <figcaption><strong>THE HEART TRANSPLANT</strong>Altima engine swap. Out with the tired one, in with one that had "low miles, trust me" from the internet.</figcaption>
     </figure>
     <figure class="g-item">
-      <img src="photos/gallery-weld.jpg?v=202611170403" alt="Sparks and Receipts: custom exhaust being welded">
+      <img src="photos/gallery-weld.jpg?v=202611170414" alt="Sparks and Receipts: custom exhaust being welded">
       <figcaption><strong>SPARKS &amp; RECEIPTS</strong>Full custom exhaust, welded in-house. Loud enough to pay tribute to the neighborhood at 6 AM.</figcaption>
     </figure>
     <figure class="g-item tall">
-      <img src="photos/squarebody.jpg?v=202611170403" alt="The Square Rebirth: GMC square body, patina kept, stance added">
+      <img src="photos/squarebody.jpg?v=202611170414" alt="The Square Rebirth: GMC square body, patina kept, stance added">
       <figcaption><strong>THE SQUARE REBIRTH</strong>'85 GMC square body. Kept the patina, binned the rot, dropped it two inches. Looks old, stops straight.</figcaption>
     </figure>
     <figure class="g-item">
-      <img src="photos/gallery-restore.jpg?v=202611170403" alt="Square body cab on a rotisserie stand in primer">
+      <img src="photos/gallery-restore.jpg?v=202611170414" alt="Square body cab on a rotisserie stand in primer">
       <figcaption><strong>ROT ISSUE, RESOLVED</strong>Same truck, mid-surgery. Cab on the rotisserie while we replaced everything the rust belt ate.</figcaption>
     </figure>
     <figure class="g-item">
-      <img src="photos/gallery-align.jpg?v=202611170403" alt="Alignment Negotiated: rusty Golf on the alignment rack">
+      <img src="photos/gallery-align.jpg?v=202611170414" alt="Alignment Negotiated: rusty Golf on the alignment rack">
       <figcaption><strong>ALIGNMENT: NEGOTIATED</strong>MK4 Golf came in crab-walking. Left with camber within 0.2 degrees of "as designed" and 6 degrees of "as requested."</figcaption>
     </figure>
     <figure class="g-item tall">
-      <img src="photos/vw-clapped.jpg?v=202611170403" alt="Clapped Out Standing: the mismatched Jetta, finished">
+      <img src="photos/vw-clapped.jpg?v=202611170414" alt="Clapped Out Standing: the mismatched Jetta, finished">
       <figcaption><strong>CLAPPED, BUT STANDING</strong>The famous mismatched Jetta. Four paint colors, one vision. Now the lowest car on its block by a full inch.</figcaption>
     </figure>
     <figure class="g-item">
-      <img src="photos/gallery-paint.jpg?v=202611170403" alt="Fifty Shades of Orange: car half in primer, half in fresh paint">
+      <img src="photos/gallery-paint.jpg?v=202611170414" alt="Fifty Shades of Orange: car half in primer, half in fresh paint">
       <figcaption><strong>FIFTY SHADES OF ORANGE</strong>Booth respray, halfway through. The orange side is the after. Obviously.</figcaption>
     </figure>
     <figure class="g-item">
-      <img src="photos/doge-ram.jpg?v=202611170403" alt="Ramón supervising from the shop Ram truck">
+      <img src="photos/doge-ram.jpg?v=202611170414" alt="Ramón supervising from the shop Ram truck">
       <figcaption><strong>QUALITY CONTROL</strong>Ramón inspects every finished car. He has failed none. He is a dog in a truck.</figcaption>
     </figure>
   </div>
@@ -118,6 +120,6 @@
   </div>
   <p class="foot-legal">&copy; 2026 Juicebox Dismantling Service - a fictional business built as a design concept. No real services, prices or customers. Ramón is real in our hearts.</p>
 </footer>
-<script src="script.js?v=202611170403"></script>
+<script src="script.js?v=202611170414"></script>
 </body>
 </html>
